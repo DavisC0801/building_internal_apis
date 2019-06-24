@@ -24,4 +24,15 @@ describe "Items API" do
 
     expect(item["id"]).to eq(id)
   end
+
+  it "can create an item" do
+    item_params = {name: "Soybucks", description: "The sixth world's best coffee."}
+
+    post "/api/v1/items", params: {item: item_params}
+    item = Item.last
+
+    expect(response).to be_successful
+    expect(item.name).to eq(item_params[:name])
+    expect(response.description).to eq(item_params[:description])
+  end
 end
