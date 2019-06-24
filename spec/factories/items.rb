@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    name { "MyString" }
-    description { "MyText" }
+    name { "Stuffer Shack" }
+    description { "Stuff your face for half the price." }
   end
 end
